@@ -61,6 +61,18 @@ spring:
         group_output:
           destination: stream-group-demo
           content-type: text/plain
+        trans_output:
+          destination: stream-trans-demo
+          content-type: text/plain
+        partition_output:
+          destination: stream-partition-demo
+          content-type: text/plain
+          producer:
+            partitionKeyExpression: payload #取模表达式，系统会根据payload%partition count来向某一个partition放数据
+            partitionCount: 2 #指定该topic需要建立多少个partition，必须配合autoAddPartitions: true使用
+        header_output:
+          destination: stream-header-demo
+          content-type: text/plain
 
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**/**Mapper.xml

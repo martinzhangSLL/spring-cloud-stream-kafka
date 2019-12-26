@@ -62,6 +62,16 @@ spring:
           destination: stream-group-demo
           content-type: text/plain
           group: demo-group
+        trans_input:
+          destination: stream-trans-demo-1
+          content-type: text/plain
+        partition_input:
+          destination: stream-partition-demo
+          content-type: text/plain
+          group: partition-group
+        header_input:
+          destination: stream-header-demo
+          content-type: text/plain
 
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**/**Mapper.xml
