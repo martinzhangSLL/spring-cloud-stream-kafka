@@ -1,5 +1,5 @@
 server:
-  port: 10006
+  port: 10007
   session-timeout: 30
   tomcat.max-threads: 0
   tomcat.uri-encoding: UTF-8
@@ -11,7 +11,7 @@ swagger:
 
 spring:
   application:
-    name: consumer2
+    name: consumer3
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
@@ -61,7 +61,7 @@ spring:
         group_input:
           destination: stream-group-demo
           content-type: text/plain
-          group: demo-group
+          #group: demo-group
 
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**/**Mapper.xml

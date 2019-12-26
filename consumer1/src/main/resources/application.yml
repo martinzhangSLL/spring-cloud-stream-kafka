@@ -1,5 +1,5 @@
 server:
-  port: 10002
+  port: 10005
   session-timeout: 30
   tomcat.max-threads: 0
   tomcat.uri-encoding: UTF-8
@@ -11,7 +11,8 @@ swagger:
 
 spring:
   application:
-    name: EffectiveJava
+    name: consumer1
+
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
@@ -42,6 +43,25 @@ spring:
         wall:
           config:
             multi-statement-allow: true
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: 192.168.6.63:9092
+          zk-nodes: 127.0.0.1:2181
+          minPartitionCount: 1
+          autoCreateTopics: true
+          autoAddPartitions: true
+          required-acks: 1
+          health-timeout: 120
+      bindings:
+        common_input:
+          destination: stream-demo
+          content-type: text/plain
+        group_input:
+          destination: stream-group-demo
+          content-type: text/plain
+          group: demo-group
 
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**/**Mapper.xml

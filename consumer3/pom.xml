@@ -8,10 +8,10 @@
         <version>1.0</version>
     </parent>
     <groupId>com.rgs.template</groupId>
-    <artifactId>producer</artifactId>
+    <artifactId>consumer3</artifactId>
     <version>1.0.0</version>
-    <name>producer</name>
-    <description>producer</description>
+    <name>consumer3</name>
+    <description>consumer3</description>
 
     <dependencies>
         <dependency>
@@ -25,7 +25,6 @@
             <artifactId>spring-cloud-stream-binder-kafka</artifactId>
             <version>3.0.1.RELEASE</version>
         </dependency>
-
 
     </dependencies>
 
